@@ -1,3 +1,3 @@
-3D Game </n>
+# 3D Game </n>
 
 By: Alexa, Farhat, and Sarah
