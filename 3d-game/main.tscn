@@ -35,6 +35,10 @@ size = Vector3(10, 0.5, 10)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.44462, 0)
 script = ExtResource("1_x1f8m")
 
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+transform = Transform3D(0.834059, 0, 0.551675, 0, 1, 0, -0.551675, 0, 0.834059, 4.07905, 0.90252, 4.70161)
+fov = 50.7926
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.310096, 0)
 mesh = SubResource("CapsuleMesh_ifqts")
@@ -43,11 +47,7 @@ mesh = SubResource("CapsuleMesh_ifqts")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.249889, 0)
 shape = SubResource("CapsuleShape3D_p7vkv")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.834059, 0, 0.551675, 0, 1, 0, -0.551675, 0, 0.834059, 4.07905, 2.34714, 4.70161)
-fov = 50.7926
-
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37041, 1.78443, -13.1958)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37, 0, -10.987)
 use_collision = true
 size = Vector3(3, 1, 10)
