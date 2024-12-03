@@ -36,7 +36,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.44462, 0)
 script = ExtResource("1_x1f8m")
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
-transform = Transform3D(0.99972, -2.36614e-09, -0.0236644, 0.00610007, 0.966205, 0.257702, 0.0228647, -0.257774, 0.965935, -0.12147, 2.58669, 4.70161)
+transform = Transform3D(0.99972, -1.97665e-09, -0.0236644, 0.00610007, 0.966205, 0.257701, 0.0228647, -0.257774, 0.965935, -0.12147, 2.58669, 4.70161)
 fov = 50.7926
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
