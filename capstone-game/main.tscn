@@ -67,7 +67,7 @@ mesh = SubResource("CapsuleMesh_2abgg")
 [node name="camera_mount" type="Node3D" parent="CharacterBody3D"]
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/camera_mount"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.149615, 2.16067, 2.8553)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0278841, 2.60011, 2.8553)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.731967, 0.434325, -0.524963, -0.000436562, 0.770187, 0.637818, 0.68134, 0.467091, -0.563562, 0, 8.13288, 2.84729)
