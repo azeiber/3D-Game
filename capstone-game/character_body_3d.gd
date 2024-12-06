@@ -9,7 +9,6 @@ const JUMP_VELOCITY = 4.5
 @export var sens_vertical = 0.5
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-
 	
 func _input(event):
 	if event is InputEventMouseButton:
@@ -20,6 +19,7 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x*sens_horizontal))
 		camera_mount.rotate_x(deg_to_rad(-event.relative.y*sens_vertical))
+		camera_mount.rotation_degrees.x = clampf(camera_mount.rotation_degrees.x, -90, 45)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
