@@ -1,61 +1,32 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmcseh2jp0kxi"]
+[gd_scene load_steps=4 format=3 uid="uid://dhoc73ewbx2uy"]
 
-[ext_resource type="Script" path="res://character_body_3d.gd" id="1_x1f8m"]
+[ext_resource type="Script" path="res://character_body_3d.gd" id="1_lqf3q"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2yd7h"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kmr8v"]
 
-[sub_resource type="Sky" id="Sky_a7qlo"]
-sky_material = SubResource("ProceduralSkyMaterial_2yd7h")
-
-[sub_resource type="Environment" id="Environment_4hym5"]
-background_mode = 2
-sky = SubResource("Sky_a7qlo")
-tonemap_mode = 2
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ifqts"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p7vkv"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_lt3ju"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-shadow_enabled = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.409836, 1.61331, 3.76598)
 
-<<<<<<< Updated upstream
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_4hym5")
+[node name="level" type="Node3D" parent="."]
 
-=======
->>>>>>> Stashed changes
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
+[node name="CSGBox3D" type="CSGBox3D" parent="level"]
 use_collision = true
-size = Vector3(10, 0.5, 10)
+size = Vector3(5, 0.1, 5)
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.44462, 0)
-script = ExtResource("1_x1f8m")
-
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
-transform = Transform3D(0.99972, -1.97665e-09, -0.0236644, 0.00610007, 0.966205, 0.257701, 0.0228647, -0.257774, 0.965935, -0.12147, 2.58669, 4.70161)
-fov = 50.7926
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.310096, 0)
-mesh = SubResource("CapsuleMesh_ifqts")
+script = ExtResource("1_lqf3q")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.249889, 0)
-shape = SubResource("CapsuleShape3D_p7vkv")
+shape = SubResource("CapsuleShape3D_kmr8v")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
-<<<<<<< Updated upstream
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37, 0, -10.987)
-use_collision = true
-size = Vector3(3, 1, 10)
-=======
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.060483, 1.78443, -11.7463)
-size = Vector3(3, 1, 7)
->>>>>>> Stashed changes
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.26811, 0)
+mesh = SubResource("CapsuleMesh_lt3ju")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.953953, 3.5879)
