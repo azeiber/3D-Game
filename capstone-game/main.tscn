@@ -47,9 +47,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.148044, 0.625945, -7.5037)
 use_collision = true
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.7526)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0492115, 0.058547, -11.5677)
 use_collision = true
 size = Vector3(5, 0.1, 5)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Level"]
+transform = Transform3D(0.883062, 0.469256, 0, -0.469256, 0.883062, 0, 0, 0, 1, -0.528586, 0.740276, -16.1378)
+use_collision = true
+size = Vector3(2.61499, 0.1, 2.94971)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Level"]
+transform = Transform3D(-0.757611, 0.652707, 0, -0.652707, -0.757611, 0, 0, 0, 1, 0.497585, 1.02024, -19.8586)
+use_collision = true
+size = Vector3(2.61499, 0.1, 2.94971)
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 script = ExtResource("1_b6lnm")
