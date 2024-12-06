@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bb8icu8jf8mqq"]
+[gd_scene load_steps=26 format=3 uid="uid://bb8icu8jf8mqq"]
 
 [ext_resource type="Script" path="res://character_body_3d.gd" id="1_b6lnm"]
 [ext_resource type="ArrayMesh" uid="uid://bi440h3sta6j4" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/tiles/roads/hex_road_A.obj" id="2_0yllu"]
@@ -9,8 +9,16 @@
 [ext_resource type="ArrayMesh" uid="uid://din0nmxvm76o1" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/nature/tree_single_A.obj" id="6_d7hbr"]
 [ext_resource type="ArrayMesh" uid="uid://bamc5flhek2mg" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/nature/waterplant_C.obj" id="7_82gvn"]
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qol5c"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jb0kc"]
+seamless = true
+noise = SubResource("FastNoiseLite_qol5c")
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8oxlf"]
-sky_horizon_color = Color(0.612201, 0.646121, 0.670051, 1)
+sky_top_color = Color(0.275289, 0.670756, 0.816241, 1)
+sky_horizon_color = Color(0.872347, 0.560894, 0.183365, 1)
+sky_cover = SubResource("NoiseTexture2D_jb0kc")
 ground_bottom_color = Color(0.0638056, 0.130485, 0.130204, 1)
 ground_horizon_color = Color(0.612201, 0.646121, 0.670051, 1)
 
