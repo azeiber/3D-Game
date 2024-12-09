@@ -1,0 +1,5 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1733454993
+character_body_3d.gd::GDScript::-1::1732140661::0::1::::<>CharacterBody3D<>::
+icon.svg::CompressedTexture2D::3103754281968830363::1732139812::1732139821::1::::<><>::
+main.tscn::PackedScene::5620336705399255254::1733454127::0::1::::<><>::res://character_body_3d.gd

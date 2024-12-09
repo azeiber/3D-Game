@@ -1,6 +1,5 @@
-[gd_scene load_steps=26 format=3 uid="uid://bb8icu8jf8mqq"]
+[gd_scene load_steps=25 format=3 uid="uid://bb8icu8jf8mqq"]
 
-[ext_resource type="Script" path="res://character_body_3d.gd" id="1_b6lnm"]
 [ext_resource type="ArrayMesh" uid="uid://bi440h3sta6j4" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/tiles/roads/hex_road_A.obj" id="2_0yllu"]
 [ext_resource type="ArrayMesh" uid="uid://dwbkluhy7gxma" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/tiles/roads/hex_road_B.obj" id="3_i8h8n"]
 [ext_resource type="ArrayMesh" uid="uid://clhtvjbypmbj0" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/tiles/base/hex_grass_bottom.obj" id="4_qtbep"]
@@ -8,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://b0cat3nfflhbh" path="res://building_castle_green_2.tscn" id="5_wcv6b"]
 [ext_resource type="ArrayMesh" uid="uid://din0nmxvm76o1" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/nature/tree_single_A.obj" id="6_d7hbr"]
 [ext_resource type="ArrayMesh" uid="uid://bamc5flhek2mg" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/nature/waterplant_C.obj" id="7_82gvn"]
+[ext_resource type="PackedScene" uid="uid://hfu35y2qqm3x" path="res://mainCharacter.tscn" id="7_cabfx"]
+[ext_resource type="Script" path="res://main_character.gd" id="10_koqoj"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_qol5c"]
 
@@ -56,12 +57,6 @@ data = PackedVector3Array(0, -1, -1.1547, 0, 0, -1.1547, -1, -1, -0.5774, -1, -1
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wbxpv"]
 data = PackedVector3Array(1, -1, 0.5774, 1, 0.9466, 0.5774, 1, -1, -0.5774, 1, -1, -0.5774, 1, 0.9466, 0.5774, 1, 0.9466, -0.5774, 0, -1, 1.1547, 0, 0.9464, 1.1547, 1, -1, 0.5774, 1, -1, 0.5774, 0, 0.9464, 1.1547, 1, 0.9466, 0.5774, -1, -1, 0.5774, -1, -0.0538, 0.5774, 0, -1, 1.1547, 0, -1, 1.1547, -1, -0.0538, 0.5774, 0, 0.9464, 1.1547, -1, -1, -0.5774, -1, -0.0538, -0.5774, -1, -1, 0.5774, -1, -1, 0.5774, -1, -0.0538, -0.5774, -1, -0.0538, 0.5774, -0.9646, 0.0354, -0.5421, 0, 1, -1.099, -0.9646, 0.0354, 0.5421, -0.9646, 0.0354, 0.5421, 0, 1, -1.099, 0, 1, 1.099, 0, -1, -1.1547, 0, 0.9464, -1.1547, -1, -1, -0.5774, -1, -1, -0.5774, 0, 0.9464, -1.1547, -1, -0.0538, -0.5774, 1, -1, -0.5774, 1, 0.9466, -0.5774, 0, -1, -1.1547, 0, -1, -1.1547, 1, 0.9466, -0.5774, 0, 0.9464, -1.1547, 0, 0.9464, -1.1547, 1, 0.9466, -0.5774, 0, 1, -1.099, 0, 1, -1.099, 1, 0.9466, -0.5774, 0.95, 1, -0.5504, 1, 0.9466, -0.5774, 1, 0.9466, 0.5774, 0.95, 1, -0.5504, 0.95, 1, -0.5504, 1, 0.9466, 0.5774, 0.95, 1, 0.5504, 1, 0.9466, 0.5774, 0, 0.9464, 1.1547, 0.95, 1, 0.5504, 0.95, 1, 0.5504, 0, 0.9464, 1.1547, 0, 1, 1.099, 0, 0.9464, 1.1547, -1, -0.0538, 0.5774, 0, 1, 1.099, 0, 1, 1.099, -1, -0.0538, 0.5774, -0.9646, 0.0354, 0.5421, -1, -0.0538, 0.5774, -1, -0.0538, -0.5774, -0.9646, 0.0354, 0.5421, -0.9646, 0.0354, 0.5421, -1, -0.0538, -0.5774, -0.9646, 0.0354, -0.5421, -1, -0.0538, -0.5774, 0, 0.9464, -1.1547, -0.9646, 0.0354, -0.5421, -0.9646, 0.0354, -0.5421, 0, 0.9464, -1.1547, 0, 1, -1.099, 0, 1, -1.099, 0.95, 1, -0.5504, 0, 1, 1.099, 0, 1, 1.099, 0.95, 1, -0.5504, 0.95, 1, 0.5504, 0, -1, -1.1547, 0, -1, 0, 1, -1, -0.5774, 1, -1, -0.5774, 0, -1, 0, 1, -1, 0.5774, 1, -1, 0.5774, 0, -1, 0, 0, -1, 1.1547, 0, -1, 1.1547, 0, -1, 0, -1, -1, 0.5774, -1, -1, 0.5774, 0, -1, 0, -1, -1, -0.5774, -1, -1, -0.5774, 0, -1, 0, 0, -1, -1.1547)
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y0rln"]
-radius = 0.294948
-height = 1.81928
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_2abgg"]
 
 [sub_resource type="Curve3D" id="Curve3D_ebqr0"]
 
@@ -165,24 +160,6 @@ shape = SubResource("ConcavePolygonShape3D_wbxpv")
 [node name="building_castle_green2" parent="Level" instance=ExtResource("5_wcv6b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -27.2974)
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-script = ExtResource("1_b6lnm")
-sens_horizontal = 0.2
-sens_vertical = 0.2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.121257, 1.23789, 0)
-shape = SubResource("CapsuleShape3D_y0rln")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10138, 0)
-mesh = SubResource("CapsuleMesh_2abgg")
-
-[node name="camera_mount" type="Node3D" parent="CharacterBody3D"]
-
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/camera_mount"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0278841, 2.60011, 2.8553)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.731967, 0.434325, -0.524963, -0.000436562, 0.770187, 0.637818, 0.68134, 0.467091, -0.563562, 0, 8.13288, 2.84729)
 
@@ -208,3 +185,11 @@ mesh = ExtResource("6_d7hbr")
 [node name="WaterplantC" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32127, 0.693442, -11.9715)
 mesh = ExtResource("7_82gvn")
+
+[node name="Rogue_Hooded" parent="." instance=ExtResource("7_cabfx")]
+script = ExtResource("10_koqoj")
+
+[node name="camera_mount" type="Node3D" parent="Rogue_Hooded"]
+
+[node name="Camera3D" type="Camera3D" parent="Rogue_Hooded/camera_mount"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0278841, 2.82291, 4.19872)
