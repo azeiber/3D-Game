@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 @onready var camera_mount = $camera_mount
 @onready var animation_player = $AnimationPlayer
+@onready var visuals = $Rig
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -23,6 +24,7 @@ func _input(event):
 		
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x*sens_horizontal))
+		visuals.rotate_y(deg_to_rad(event.relative.x*sens_horizontal))
 		camera_mount.rotate_x(deg_to_rad(-event.relative.y*sens_vertical))
 		camera_mount.rotation_degrees.x = clampf(camera_mount.rotation_degrees.x, -90, 45)
 
@@ -41,13 +43,18 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		if animation_player.current_animation != "Walking_A":
 			animation_player.play("Walking_A")
+			
+		visuals.look_at(position + direction)
+		
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	else:
-		if animation_player.current_animation != "idle":
+		if animation_player.current_animation == "Walking_A":
+			animation_player.stop()
 			animation_player.play("idle")
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+			
+		velocity.x = move_toward(velocity.x, 0, SPEED * delta)
+		velocity.z = move_toward(velocity.z, 0, SPEED * delta)
 		
 	if global_transform.origin.y < -7:
 		get_tree().reload_current_scene()
