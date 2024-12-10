@@ -6,6 +6,7 @@ extends CharacterBody3D
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
+const FRICTION = 0.01
 
 @export var sens_horizontal = 0.5
 @export var sens_vertical = 0.5
@@ -53,8 +54,10 @@ func _physics_process(delta: float) -> void:
 			animation_player.stop()
 			animation_player.play("Idle")
 			
-		velocity.x = move_toward(velocity.x, 0, SPEED * delta)
-		velocity.z = move_toward(velocity.z, 0, SPEED * delta)
+		velocity.x = 0
+		# move_toward(velocity.x, 0, FRICTION * delta)
+		velocity.z = 0
+		# move_toward(velocity.z, 0, FRICTION * delta)
 		
 	if global_transform.origin.y < -7:
 		get_tree().reload_current_scene()
