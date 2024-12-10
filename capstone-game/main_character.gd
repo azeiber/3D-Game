@@ -51,7 +51,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		if animation_player.current_animation == "Walking_A":
 			animation_player.stop()
-			animation_player.play("idle")
+			animation_player.play("Idle")
 			
 		velocity.x = move_toward(velocity.x, 0, SPEED * delta)
 		velocity.z = move_toward(velocity.z, 0, SPEED * delta)
