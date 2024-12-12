@@ -110,6 +110,21 @@ _data = {
 }
 point_count = 5
 
+[sub_resource type="Animation" id="Animation_pkabj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_mvggw"]
 resource_name = "moving_platform"
 length = 6.0
@@ -125,21 +140,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [0.0, 0.1807, 0.8855]
-}
-
-[sub_resource type="Animation" id="Animation_pkabj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PathFollow3D:progress_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gxkyw"]
@@ -253,7 +253,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14085, 0, -31.0269)
 curve = SubResource("Curve3D_b7bkr")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Level/Path3D"]
-transform = Transform3D(0.0232192, 0.0802523, -0.996487, 0, 0.996597, 0.0802867, 0.999558, -0.00186422, 0.0231478, -7.68811, 0.199785, -1.06435)
+transform = Transform3D(0.0232193, 0.0802524, -0.996487, -3.72465e-09, 0.996597, 0.0802869, 0.999558, -0.00186422, 0.023148, -7.79243, 0.20819, -1.06192)
 loop = false
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Level/Path3D/PathFollow3D"]
@@ -275,7 +275,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14085, 0, -41.7174)
 curve = SubResource("Curve3D_b7bkr")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Level/Path3D2"]
-transform = Transform3D(0.0232193, 0.0802523, -0.996486, -1.16954e-06, 0.996597, 0.0802866, 0.999558, -0.00186306, 0.023148, -2.7703, -0.196442, -1.17858)
+transform = Transform3D(0.0232193, 0.0802524, -0.996486, -3.72465e-09, 0.996597, 0.0802868, 0.999558, -0.00186422, 0.0231479, -7.79243, 0.20819, -1.06192)
 loop = false
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Level/Path3D2/PathFollow3D"]
@@ -307,7 +307,7 @@ transform = Transform3D(0.991269, 0.131858, 0, -0.131858, 0.991269, 0, 0, 0, 1, 
 curve = SubResource("Curve3D_wldyw")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Level/Path3D3"]
-transform = Transform3D(1, 0, 0, 0, 0.999987, 0, 0, 0, 1.00002, -1.94075, -0.184978, 3.36733)
+transform = Transform3D(1, 0, 0, 0, 0.999987, 0, 0, 0, 1.00002, -3.19501, -0.352914, 3.32563)
 rotation_mode = 0
 loop = false
 
