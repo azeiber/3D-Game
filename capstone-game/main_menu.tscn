@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dn0m6o0rrvgp6"]
+[gd_scene load_steps=7 format=3 uid="uid://dn0m6o0rrvgp6"]
 
+[ext_resource type="Script" path="res://main_menu.gd" id="1_g7ibn"]
 [ext_resource type="Texture2D" uid="uid://7sx3ecxr0244" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/props/Darinia/background.jpg" id="1_jny60"]
 [ext_resource type="FontFile" uid="uid://mvrs6asfw4xu" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/props/Darinia/Darinia.ttf" id="2_ci5ko"]
 [ext_resource type="FontFile" uid="uid://cmnw5xn23v3xy" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/props/Darinia.ttf" id="3_5pkgi"]
+[ext_resource type="AudioStream" uid="uid://0beo6isd4oyc" path="res://addons/sounds/Feast of Merriment.wav" id="5_d8n12"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lruxn"]
 font = ExtResource("2_ci5ko")
@@ -18,6 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_g7ibn")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -67,7 +70,7 @@ alignment = 1
 [node name="separator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="play_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_5pkgi")
@@ -76,8 +79,25 @@ text = "PLAY"
 [node name="separator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Button2" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="tutorial_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_5pkgi")
 text = "TUTORIAL"
+
+[node name="separator4" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="exit_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5pkgi")
+text = "QUIT"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_d8n12")
+autoplay = true
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/tutorial_button" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/exit_button" to="." method="_on_exit_button_pressed"]

@@ -1,9 +1,89 @@
-[gd_scene format=3 uid="uid://dcp1s7orjb08y"]
+[gd_scene load_steps=5 format=3 uid="uid://dcp1s7orjb08y"]
 
-[node name="Control" type="Control"]
+[ext_resource type="Texture2D" uid="uid://7sx3ecxr0244" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/props/Darinia/background.jpg" id="1_3lmks"]
+[ext_resource type="Script" path="res://tutorial.gd" id="1_udref"]
+[ext_resource type="FontFile" uid="uid://mvrs6asfw4xu" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/props/Darinia/Darinia.ttf" id="2_r6rjg"]
+[ext_resource type="AudioStream" uid="uid://b588mou508hab" path="res://addons/sounds/Clash of Steel.wav" id="4_p3yh7"]
+
+[node name="tutorial" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_udref")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3lmks")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="tutorial_text" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_r6rjg")
+theme_override_font_sizes/font_size = 18
+text = "In a land far away, a young merchant was wrongly accused of stealing the princess' prized 
+possesion: her puppy named Rosie. he knows he is innocent, but the guards are after him
+and the only way to escape is through the castle... make your way to the castle and help
+the young merchant exape to freedom!
+
+Controls:
+WASD: Move
+Space: Jump
+Esc: Make mouse visible
+click: hide mouse
+Mouse: Look around
+Stay in the Shadows: Avoid detection
+
+Your journey begins now—escape the castle and reclaim your freedom!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="separator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="separator" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="play_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(130, 30)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_r6rjg")
+text = "PLAY"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_p3yh7")
+autoplay = true
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/play_button" to="." method="_on_play_button_pressed"]
