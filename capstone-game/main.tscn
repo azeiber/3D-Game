@@ -1,5 +1,6 @@
-[gd_scene load_steps=39 format=3 uid="uid://bb8icu8jf8mqq"]
+[gd_scene load_steps=44 format=3 uid="uid://bb8icu8jf8mqq"]
 
+[ext_resource type="Texture2D" uid="uid://bv2ide5rpv2sk" path="res://addons/kaykit_medieval_hexagon_pack/wall-made-stone/5911.jpg" id="1_8wxs3"]
 [ext_resource type="Texture2D" uid="uid://cyqxevsacbma1" path="res://addons/kaykit_medieval_hexagon_pack/Textures/Cartoon_green_texture_grass.jpg" id="1_mc1m0"]
 [ext_resource type="ArrayMesh" uid="uid://bi440h3sta6j4" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/tiles/roads/hex_road_A.obj" id="2_0yllu"]
 [ext_resource type="ArrayMesh" uid="uid://dwbkluhy7gxma" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/tiles/roads/hex_road_B.obj" id="3_i8h8n"]
@@ -9,6 +10,7 @@
 [ext_resource type="ArrayMesh" uid="uid://din0nmxvm76o1" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/nature/tree_single_A.obj" id="6_d7hbr"]
 [ext_resource type="ArrayMesh" uid="uid://bamc5flhek2mg" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/nature/waterplant_C.obj" id="7_82gvn"]
 [ext_resource type="PackedScene" uid="uid://hfu35y2qqm3x" path="res://mainCharacter.tscn" id="7_cabfx"]
+[ext_resource type="Texture2D" uid="uid://1sua7jfoxlkw" path="res://addons/kaykit_medieval_hexagon_pack/Textures/cartoon-style-wooden-slats/885.jpg" id="8_xaksv"]
 [ext_resource type="AudioStream" uid="uid://dwa5hj4raiwqe" path="res://addons/sounds/The Merry Bard.wav" id="10_ai5ir"]
 [ext_resource type="Script" path="res://main_character.gd" id="10_koqoj"]
 
@@ -32,6 +34,10 @@ sky_material = SubResource("ProceduralSkyMaterial_8oxlf")
 background_mode = 2
 sky = SubResource("Sky_6pqf8")
 tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gpq8w"]
+albedo_texture = ExtResource("1_8wxs3")
+albedo_texture_force_srgb = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y3f6i"]
 albedo_color = Color(0.447059, 0.682353, 0.0941176, 1)
@@ -66,15 +72,14 @@ data = PackedVector3Array(1, -1, 0.5774, 1, 0.9466, 0.5774, 1, -1, -0.5774, 1, -
 
 [sub_resource type="Curve3D" id="Curve3D_b7bkr"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -7.79243, 0.20819, -1.06192, 0, 0, 0, 0, 0, 0, -0.0733809, -0.413733, -1.24123, 0, 0, 0, 0, 0, 0, 5.85784, -0.418354, -1.24058),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -7.79243, -0.142599, -1.06192, 0, 0, 0, 0, 0, 0, -0.0733809, -0.413733, -1.24123, 0, 0, 0, 0, 0, 0, 5.85784, -0.418354, -1.24058),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b1is6"]
 render_priority = 5
-albedo_texture = ExtResource("1_mc1m0")
-albedo_texture_force_srgb = true
+albedo_color = Color(0.603922, 0.92549, 1, 1)
 
 [sub_resource type="Animation" id="Animation_viiw5"]
 resource_name = "Moving_platform1"
@@ -114,6 +119,9 @@ _data = {
 "RESET": SubResource("Animation_m5e4b")
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sen13"]
+albedo_color = Color(0.603922, 0.92549, 1, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tped1"]
 albedo_texture = ExtResource("1_mc1m0")
 albedo_texture_force_srgb = true
@@ -128,6 +136,9 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fichs"]
+albedo_texture = ExtResource("8_xaksv")
 
 [sub_resource type="Animation" id="Animation_pkabj"]
 length = 0.001
@@ -177,9 +188,10 @@ environment = SubResource("Environment_hx023")
 [node name="Level" type="Node3D" parent="."]
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Level"]
-transform = Transform3D(0.99998, 0, -0.00624817, 0, 1, 0, 0.00624817, 0, 0.99998, -0.256203, 0.223055, -62.3706)
+transform = Transform3D(0.99998, 0, -0.00624817, 0, 1, 0, 0.00624817, 0, 0.99998, -0.254952, 0.223055, -62.5708)
 use_collision = true
-size = Vector3(3, 1, 2)
+size = Vector3(3, 1, 2.40039)
+material = SubResource("StandardMaterial3D_gpq8w")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Level"]
 use_collision = true
@@ -273,7 +285,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14085, 0, -31.0269)
 curve = SubResource("Curve3D_b7bkr")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Level/Path3D"]
-transform = Transform3D(0.0232193, 0.0802524, -0.996487, -3.72465e-09, 0.996597, 0.0802869, 0.999558, -0.00186422, 0.023148, -7.79243, 0.20819, -1.06192)
+transform = Transform3D(0.0232193, 0.0350786, -0.999098, -3.72465e-09, 0.999209, 0.0350936, 0.999558, -0.000814856, 0.0232086, -7.79243, -0.142599, -1.06192)
 loop = false
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Level/Path3D/PathFollow3D"]
@@ -296,7 +308,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14085, 0, -41.7174)
 curve = SubResource("Curve3D_b7bkr")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Level/Path3D2"]
-transform = Transform3D(0.0232193, 0.0802524, -0.996486, -3.72465e-09, 0.996597, 0.0802868, 0.999558, -0.00186422, 0.0231479, -7.79243, 0.20819, -1.06192)
+transform = Transform3D(0.0232193, 0.0350786, -0.999097, -3.72465e-09, 0.999209, 0.0350936, 0.999558, -0.000814856, 0.0232086, -7.79243, -0.142599, -1.06192)
 loop = false
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Level/Path3D2/PathFollow3D"]
@@ -304,6 +316,7 @@ transform = Transform3D(1, 1.16415e-10, 0, 0, 1, 9.82254e-11, 0, 7.58519e-09, 1,
 use_collision = true
 radius = 2.94878
 height = 0.537
+material = SubResource("StandardMaterial3D_sen13")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Level/Path3D2"]
 callback_mode_process = 0
@@ -338,6 +351,7 @@ loop = false
 transform = Transform3D(0.999975, 0.00633715, 0.000582259, -0.00612503, 0.983201, -0.182421, -0.00172852, 0.182413, 0.983216, -0.21176, -0.134474, -0.584034)
 use_collision = true
 size = Vector3(3.771, 1, 2.14197)
+material = SubResource("StandardMaterial3D_fichs")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Level/Path3D3"]
 libraries = {
