@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h8pdmqx7u1hf"
-path.s3tc="res://.godot/imported/hexagons_medieval.png-aed38289d56c9eeba9b6ba43505e982c.s3tc.ctex"
+uid="uid://cyqxevsacbma1"
+path.s3tc="res://.godot/imported/Cartoon_green_texture_grass.jpg-74e6279453b161e987ef8ba0f31014bb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/kaykit_medieval_hexagon_pack/Textures/hexagons_medieval.png"
-dest_files=["res://.godot/imported/hexagons_medieval.png-aed38289d56c9eeba9b6ba43505e982c.s3tc.ctex"]
+source_file="res://addons/kaykit_medieval_hexagon_pack/Textures/Cartoon_green_texture_grass.jpg"
+dest_files=["res://.godot/imported/Cartoon_green_texture_grass.jpg-74e6279453b161e987ef8ba0f31014bb.s3tc.ctex"]
 
 [params]
 
