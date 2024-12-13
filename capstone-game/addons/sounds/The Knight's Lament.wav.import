@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dk8slsryna3it"
+path="res://.godot/imported/The Knight's Lament.wav-4a2fdbcf80b6cf5efe6914f5be527440.sample"
+
+[deps]
+
+source_file="res://addons/sounds/The Knight's Lament.wav"
+dest_files=["res://.godot/imported/The Knight's Lament.wav-4a2fdbcf80b6cf5efe6914f5be527440.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
