@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bb8icu8jf8mqq"]
+[gd_scene load_steps=46 format=3 uid="uid://bb8icu8jf8mqq"]
 
 [ext_resource type="Texture2D" uid="uid://bv2ide5rpv2sk" path="res://addons/kaykit_medieval_hexagon_pack/wall-made-stone/5911.jpg" id="1_8wxs3"]
 [ext_resource type="Texture2D" uid="uid://cyqxevsacbma1" path="res://addons/kaykit_medieval_hexagon_pack/Textures/Cartoon_green_texture_grass.jpg" id="1_mc1m0"]
@@ -11,6 +11,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bamc5flhek2mg" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/nature/waterplant_C.obj" id="7_82gvn"]
 [ext_resource type="PackedScene" uid="uid://hfu35y2qqm3x" path="res://mainCharacter.tscn" id="7_cabfx"]
 [ext_resource type="Texture2D" uid="uid://1sua7jfoxlkw" path="res://addons/kaykit_medieval_hexagon_pack/Textures/cartoon-style-wooden-slats/885.jpg" id="8_xaksv"]
+[ext_resource type="Script" path="res://area_3d.gd" id="9_5csha"]
 [ext_resource type="AudioStream" uid="uid://dwa5hj4raiwqe" path="res://addons/sounds/The Merry Bard.wav" id="10_ai5ir"]
 [ext_resource type="Script" path="res://main_character.gd" id="10_koqoj"]
 
@@ -178,6 +179,9 @@ _data = {
 "moving_platform": SubResource("Animation_mvggw")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ukrwc"]
+size = Vector3(7.5166, 5.04492, 6.29688)
+
 [sub_resource type="Curve3D" id="Curve3D_ebqr0"]
 
 [node name="Node3D" type="Node3D"]
@@ -285,7 +289,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14085, 0, -31.0269)
 curve = SubResource("Curve3D_b7bkr")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Level/Path3D"]
-transform = Transform3D(0.0232193, 0.0350786, -0.999098, -3.72465e-09, 0.999209, 0.0350936, 0.999558, -0.000814856, 0.0232086, -7.79243, -0.142599, -1.06192)
+transform = Transform3D(0.0232193, 0.0350786, -0.999098, 0, 0.999209, 0.0350936, 0.999558, -0.000814861, 0.0232086, -7.79243, -0.142599, -1.06192)
 loop = false
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Level/Path3D/PathFollow3D"]
@@ -308,7 +312,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14085, 0, -41.7174)
 curve = SubResource("Curve3D_b7bkr")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Level/Path3D2"]
-transform = Transform3D(0.0232193, 0.0350786, -0.999097, -3.72465e-09, 0.999209, 0.0350936, 0.999558, -0.000814856, 0.0232086, -7.79243, -0.142599, -1.06192)
+transform = Transform3D(0.0232193, 0.0350786, -0.999097, 0, 0.999209, 0.0350936, 0.999558, -0.000814861, 0.0232086, -7.79243, -0.142599, -1.06192)
 loop = false
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Level/Path3D2/PathFollow3D"]
@@ -360,6 +364,14 @@ libraries = {
 autoplay = "moving_platform"
 speed_scale = 0.47
 
+[node name="Area3D" type="Area3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.16959, 1.63289, -64.9895)
+script = ExtResource("9_5csha")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2583, 1.24226, -2.55342)
+shape = SubResource("BoxShape3D_ukrwc")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.731967, 0.434325, -0.524963, -0.000436562, 0.770187, 0.637818, 0.68134, 0.467091, -0.563562, 0, 8.13288, 2.84729)
 
@@ -397,3 +409,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0278841, 2.82291, 4.19872)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_ai5ir")
 autoplay = true
+
+[connection signal="area_entered" from="Level/Area3D" to="Level/Area3D" method="_on_area_entered"]
