@@ -1,11 +1,15 @@
-[gd_scene load_steps=47 format=3 uid="uid://bb8icu8jf8mqq"]
+[gd_scene load_steps=51 format=3 uid="uid://bb8icu8jf8mqq"]
 
-[ext_resource type="Texture2D" uid="uid://bv2ide5rpv2sk" path="res://addons/kaykit_medieval_hexagon_pack/wall-made-stone/5911.jpg" id="1_8wxs3"]
+[ext_resource type="Texture2D" uid="uid://c5ks75m67s2dq" path="res://addons/Stone_Path_007_SD/Stone_Path_007_basecolor.jpg" id="1_1fr0e"]
 [ext_resource type="Texture2D" uid="uid://cyqxevsacbma1" path="res://addons/kaykit_medieval_hexagon_pack/Textures/Cartoon_green_texture_grass.jpg" id="1_mc1m0"]
 [ext_resource type="ArrayMesh" uid="uid://bi440h3sta6j4" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/tiles/roads/hex_road_A.obj" id="2_0yllu"]
+[ext_resource type="Texture2D" uid="uid://qtfq2tdhi6vr" path="res://addons/Stone_Path_007_SD/Stone_Path_007_ambientOcclusion.jpg" id="2_eipby"]
 [ext_resource type="ArrayMesh" uid="uid://dwbkluhy7gxma" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/tiles/roads/hex_road_B.obj" id="3_i8h8n"]
+[ext_resource type="Texture2D" uid="uid://oo1naob0p7vi" path="res://addons/Stone_Path_007_SD/Stone_Path_007_height.png" id="3_xjyqo"]
+[ext_resource type="Texture2D" uid="uid://c2sbw3kos55cc" path="res://addons/Stone_Path_007_SD/Stone_Path_007_normal.jpg" id="4_6nytd"]
 [ext_resource type="ArrayMesh" uid="uid://clhtvjbypmbj0" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/tiles/base/hex_grass_bottom.obj" id="4_qtbep"]
 [ext_resource type="ArrayMesh" uid="uid://14iq55hfubvj" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/tiles/base/hex_grass_sloped_high.obj" id="5_8v0tu"]
+[ext_resource type="Texture2D" uid="uid://cbyidddce8awg" path="res://addons/Stone_Path_007_SD/Stone_Path_007_roughness.jpg" id="5_hltdr"]
 [ext_resource type="PackedScene" uid="uid://b0cat3nfflhbh" path="res://building_castle_green_2.tscn" id="5_wcv6b"]
 [ext_resource type="ArrayMesh" uid="uid://din0nmxvm76o1" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/nature/tree_single_A.obj" id="6_d7hbr"]
 [ext_resource type="ArrayMesh" uid="uid://bamc5flhek2mg" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/nature/waterplant_C.obj" id="7_82gvn"]
@@ -37,9 +41,15 @@ background_mode = 2
 sky = SubResource("Sky_8bnv7")
 tonemap_mode = 2
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gpq8w"]
-albedo_texture = ExtResource("1_8wxs3")
-albedo_texture_force_srgb = true
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tn3k5"]
+albedo_texture = ExtResource("1_1fr0e")
+roughness_texture = ExtResource("5_hltdr")
+normal_enabled = true
+normal_texture = ExtResource("4_6nytd")
+ao_enabled = true
+ao_texture = ExtResource("2_eipby")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_xjyqo")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y3f6i"]
 albedo_color = Color(0.447059, 0.682353, 0.0941176, 1)
@@ -196,7 +206,7 @@ environment = SubResource("Environment_hx023")
 transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, -0.254952, 0.223055, -62.5708)
 use_collision = true
 size = Vector3(3, 1, 2.40039)
-material = SubResource("StandardMaterial3D_gpq8w")
+material = SubResource("StandardMaterial3D_tn3k5")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Level"]
 use_collision = true
