@@ -1,7 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://1pqmuo5e1pe6"]
+[gd_scene load_steps=13 format=3 uid="uid://1pqmuo5e1pe6"]
 
 [ext_resource type="PackedScene" uid="uid://hfu35y2qqm3x" path="res://mainCharacter.tscn" id="1_117or"]
 [ext_resource type="Script" path="res://main_character.gd" id="2_cvn11"]
+[ext_resource type="ArrayMesh" uid="uid://bvpgxwpc3x4fx" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/neutral/wall_corner_A_gate_door_left.obj" id="3_to2ew"]
+[ext_resource type="ArrayMesh" uid="uid://b4fnx1ohhbpyg" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/props/barrel.obj" id="4_pklxd"]
+[ext_resource type="ArrayMesh" uid="uid://byo14ia0svrv7" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/neutral/wall_straight.obj" id="5_7sevg"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_5y0sy"]
 
@@ -24,10 +27,17 @@ background_mode = 2
 sky = SubResource("Sky_6pqf8")
 tonemap_mode = 2
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q3gak"]
+
+[sub_resource type="Curve3D" id="Curve3D_ralri"]
+
 [node name="InsideCastle" type="Node3D"]
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.921335, 0.38877, 0, -0.38877, 0.921335, -3.91021, 27.6066, -17.0196)
+
 [node name="Rogue_Hooded2" parent="." instance=ExtResource("1_117or")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.563401, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.377689, -5.17779)
 script = ExtResource("2_cvn11")
 
 [node name="camera_mount" type="Node3D" parent="Rogue_Hooded2"]
@@ -35,10 +45,107 @@ script = ExtResource("2_cvn11")
 [node name="Camera3D" type="Camera3D" parent="Rogue_Hooded2/camera_mount"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0278841, 2.82291, 4.19872)
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -1.21585, 0.319153, 7.99233)
+mesh = ExtResource("3_to2ew")
+
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0594336, 0.247392, 0.0303723)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0594336, 0.247392, -19.7164)
 use_collision = true
-size = Vector3(2.4054, 0.635742, 2.52844)
+size = Vector3(50, 0, 50)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ky0li")
+
+[node name="Barrel" type="MeshInstance3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -5.37599, 0.247392, -7.65215)
+mesh = ExtResource("4_pklxd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Barrel"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Barrel/StaticBody3D"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.0812302, 0, 0)
+shape = SubResource("CapsuleShape3D_q3gak")
+
+[node name="Barrel2" type="MeshInstance3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -5.37599, 0.247392, -9.32088)
+mesh = ExtResource("4_pklxd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Barrel2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Barrel2/StaticBody3D"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.0812302, 0, 0)
+shape = SubResource("CapsuleShape3D_q3gak")
+
+[node name="Barrel3" type="MeshInstance3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -5.37599, 1.33727, -10.8788)
+mesh = ExtResource("4_pklxd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Barrel3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Barrel3/StaticBody3D"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.0812302, 0, 0)
+shape = SubResource("CapsuleShape3D_q3gak")
+
+[node name="Barrel4" type="MeshInstance3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -5.37599, 0.247392, -10.9145)
+mesh = ExtResource("4_pklxd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Barrel4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Barrel4/StaticBody3D"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.0812302, 0, 0)
+shape = SubResource("CapsuleShape3D_q3gak")
+
+[node name="Barrel5" type="MeshInstance3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -5.37599, 1.34274, -9.32088)
+mesh = ExtResource("4_pklxd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Barrel5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Barrel5/StaticBody3D"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.0812302, 0, 0)
+shape = SubResource("CapsuleShape3D_q3gak")
+
+[node name="Barrel6" type="MeshInstance3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -5.37599, 2.46982, -10.9503)
+mesh = ExtResource("4_pklxd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Barrel6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Barrel6/StaticBody3D"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.0812302, 0, 0)
+shape = SubResource("CapsuleShape3D_q3gak")
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.42276, 3.1463, -15.8067)
+curve = SubResource("Curve3D_ralri")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.42276, 3.1463, -15.8067)
+radius = 1.58654
+height = 1.13808
+
+[node name="WallStraight" type="MeshInstance3D" parent="."]
+transform = Transform3D(11, 0, 0, 0, 80, 0, 0, 0, 11, -14.126, 0, 2.144)
+mesh = ExtResource("5_7sevg")
+
+[node name="WallStraight4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-28, 0, -1.66095e-06, 0, 80, 0, 4.22788e-06, 0, -11, -0.677, 0, -41.036)
+mesh = ExtResource("5_7sevg")
+
+[node name="WallStraight5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.04907e-06, 0, 11, 0, 80, 0, -24, 0, -4.80825e-07, 28.07, 0, -19.287)
+mesh = ExtResource("5_7sevg")
+
+[node name="WallStraight6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.04907e-06, 0, -11, 0, 80, 0, 24, 0, -4.80825e-07, -28.426, 0, -19.287)
+mesh = ExtResource("5_7sevg")
+
+[node name="WallStraight3" type="MeshInstance3D" parent="."]
+transform = Transform3D(11, 0, 0, 0, 80, 0, 0, 0, 11, -0.124428, 8.87745, 2.14354)
+mesh = ExtResource("5_7sevg")
+
+[node name="WallStraight2" type="MeshInstance3D" parent="."]
+transform = Transform3D(11, 0, 0, 0, 80, 0, 0, 0, 11, 13.119, 0, 2.144)
+mesh = ExtResource("5_7sevg")
