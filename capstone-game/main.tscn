@@ -1,7 +1,8 @@
-[gd_scene load_steps=51 format=3 uid="uid://bb8icu8jf8mqq"]
+[gd_scene load_steps=50 format=3 uid="uid://bb8icu8jf8mqq"]
 
 [ext_resource type="Texture2D" uid="uid://c5ks75m67s2dq" path="res://addons/Stone_Path_007_SD/Stone_Path_007_basecolor.jpg" id="1_1fr0e"]
 [ext_resource type="Texture2D" uid="uid://cyqxevsacbma1" path="res://addons/kaykit_medieval_hexagon_pack/Textures/Cartoon_green_texture_grass.jpg" id="1_mc1m0"]
+[ext_resource type="Texture2D" uid="uid://bstl02v4xqyih" path="res://addons/uploads-files-4381587-DreamlikeLandscape_texture.jpg" id="1_vrlwl"]
 [ext_resource type="ArrayMesh" uid="uid://bi440h3sta6j4" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/tiles/roads/hex_road_A.obj" id="2_0yllu"]
 [ext_resource type="Texture2D" uid="uid://qtfq2tdhi6vr" path="res://addons/Stone_Path_007_SD/Stone_Path_007_ambientOcclusion.jpg" id="2_eipby"]
 [ext_resource type="ArrayMesh" uid="uid://dwbkluhy7gxma" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/tiles/roads/hex_road_B.obj" id="3_i8h8n"]
@@ -20,26 +21,16 @@
 [ext_resource type="Script" path="res://main_character.gd" id="10_koqoj"]
 [ext_resource type="PackedScene" uid="uid://bfbb4iq3kqu6q" path="res://addons/kaykit_medieval_hexagon_pack/Assets/gltf/decoration/nature/cloud_big.gltf" id="15_ho0kl"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_qol5c"]
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tgiq0"]
+panorama = ExtResource("1_vrlwl")
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yc3qw"]
-seamless = true
-noise = SubResource("FastNoiseLite_qol5c")
+[sub_resource type="Sky" id="Sky_gh3w8"]
+sky_material = SubResource("PanoramaSkyMaterial_tgiq0")
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8oxlf"]
-sky_top_color = Color(0.275289, 0.670756, 0.816241, 1)
-sky_horizon_color = Color(0.872347, 0.560894, 0.183365, 1)
-sky_cover = SubResource("NoiseTexture2D_yc3qw")
-ground_bottom_color = Color(0.177715, 0.169762, 0.275282, 1)
-ground_horizon_color = Color(0.668805, 0.646014, 0.497373, 1)
-
-[sub_resource type="Sky" id="Sky_8bnv7"]
-sky_material = SubResource("ProceduralSkyMaterial_8oxlf")
-
-[sub_resource type="Environment" id="Environment_hx023"]
+[sub_resource type="Environment" id="Environment_dobxd"]
 background_mode = 2
-sky = SubResource("Sky_8bnv7")
-tonemap_mode = 2
+background_energy_multiplier = 0.83
+sky = SubResource("Sky_gh3w8")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tn3k5"]
 albedo_texture = ExtResource("1_1fr0e")
@@ -197,8 +188,8 @@ size = Vector3(7.5166, 5.04492, 6.29688)
 
 [node name="Node3D" type="Node3D"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_hx023")
+[node name="WorldEnvironment2" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dobxd")
 
 [node name="Level" type="Node3D" parent="."]
 
@@ -384,7 +375,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.224847, 1.19688, -3.17819)
 shape = SubResource("BoxShape3D_ukrwc")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.731967, 0.434325, -0.524963, -0.000436562, 0.770187, 0.637818, 0.68134, 0.467091, -0.563562, 0, 8.13288, 2.84729)
+transform = Transform3D(0.796852, -0.385085, 0.465549, -0.000436605, 0.770187, 0.637818, -0.604175, -0.50845, 0.613557, 0, 8.13288, 2.84729)
+light_energy = 2.374
 
 [node name="moving platform 1" type="Node3D" parent="."]
 
