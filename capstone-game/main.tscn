@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://bb8icu8jf8mqq"]
+[gd_scene load_steps=47 format=3 uid="uid://bb8icu8jf8mqq"]
 
 [ext_resource type="Texture2D" uid="uid://bv2ide5rpv2sk" path="res://addons/kaykit_medieval_hexagon_pack/wall-made-stone/5911.jpg" id="1_8wxs3"]
 [ext_resource type="Texture2D" uid="uid://cyqxevsacbma1" path="res://addons/kaykit_medieval_hexagon_pack/Textures/Cartoon_green_texture_grass.jpg" id="1_mc1m0"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://area_3d.gd" id="9_5csha"]
 [ext_resource type="AudioStream" uid="uid://dwa5hj4raiwqe" path="res://addons/sounds/The Merry Bard.wav" id="10_ai5ir"]
 [ext_resource type="Script" path="res://main_character.gd" id="10_koqoj"]
+[ext_resource type="PackedScene" uid="uid://bfbb4iq3kqu6q" path="res://addons/kaykit_medieval_hexagon_pack/Assets/gltf/decoration/nature/cloud_big.gltf" id="15_ho0kl"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_qol5c"]
 
@@ -409,6 +410,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0278841, 2.82291, 4.19872)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_ai5ir")
 autoplay = true
+
+[node name="cloud_big3" parent="." instance=ExtResource("15_ho0kl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.3703, 1.88741, -49.9832)
+
+[node name="cloud_big2" parent="." instance=ExtResource("15_ho0kl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2565, -2.56562, -24.9916)
 
 [connection signal="area_entered" from="Level/Area3D" to="Level/Area3D" method="_on_area_entered"]
 [connection signal="body_entered" from="Level/Area3D" to="Level/Area3D" method="_on_body_entered"]
