@@ -58,7 +58,7 @@ size = Vector3(50, 0, 50)
 environment = SubResource("Environment_ky0li")
 
 [node name="Barrel" type="MeshInstance3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -5.37599, 0.247392, -7.65215)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -23.7225, 0.247392, -7.65215)
 mesh = ExtResource("4_pklxd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Barrel"]
@@ -68,7 +68,7 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.0812302, 0, 0)
 shape = SubResource("CapsuleShape3D_q3gak")
 
 [node name="Barrel2" type="MeshInstance3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -5.37599, 0.247392, -9.32088)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -23.7047, 0.247392, -9.32088)
 mesh = ExtResource("4_pklxd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Barrel2"]
@@ -78,7 +78,7 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.0812302, 0, 0)
 shape = SubResource("CapsuleShape3D_q3gak")
 
 [node name="Barrel3" type="MeshInstance3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -5.37599, 1.33727, -10.8788)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -23.6866, 1.33727, -10.8788)
 mesh = ExtResource("4_pklxd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Barrel3"]
@@ -88,7 +88,7 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.0812302, 0, 0)
 shape = SubResource("CapsuleShape3D_q3gak")
 
 [node name="Barrel4" type="MeshInstance3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -5.37599, 0.247392, -10.9145)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -23.7396, 0.247392, -10.9145)
 mesh = ExtResource("4_pklxd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Barrel4"]
@@ -98,7 +98,7 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.0812302, 0, 0)
 shape = SubResource("CapsuleShape3D_q3gak")
 
 [node name="Barrel5" type="MeshInstance3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -5.37599, 1.34274, -9.32088)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -23.684, 1.34274, -9.32088)
 mesh = ExtResource("4_pklxd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Barrel5"]
@@ -108,7 +108,7 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.0812302, 0, 0)
 shape = SubResource("CapsuleShape3D_q3gak")
 
 [node name="Barrel6" type="MeshInstance3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -5.37599, 2.46982, -10.9503)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -23.6527, 2.46982, -10.9503)
 mesh = ExtResource("4_pklxd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Barrel6"]
@@ -118,11 +118,11 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.0812302, 0, 0)
 shape = SubResource("CapsuleShape3D_q3gak")
 
 [node name="Path3D" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.42276, 3.1463, -15.8067)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9012, 3.1222, -15.8067)
 curve = SubResource("Curve3D_ralri")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.42276, 3.1463, -15.8067)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6924, 3.1463, -15.561)
 radius = 1.58654
 height = 1.13808
 
