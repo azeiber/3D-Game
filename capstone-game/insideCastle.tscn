@@ -1,11 +1,27 @@
-[gd_scene load_steps=20 format=3 uid="uid://1pqmuo5e1pe6"]
+[gd_scene load_steps=26 format=3 uid="uid://1pqmuo5e1pe6"]
 
 [ext_resource type="PackedScene" uid="uid://hfu35y2qqm3x" path="res://mainCharacter.tscn" id="1_117or"]
 [ext_resource type="Script" path="res://main_character.gd" id="2_cvn11"]
 [ext_resource type="ArrayMesh" uid="uid://bvpgxwpc3x4fx" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/neutral/wall_corner_A_gate_door_left.obj" id="3_to2ew"]
 [ext_resource type="ArrayMesh" uid="uid://b4fnx1ohhbpyg" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/props/barrel.obj" id="4_pklxd"]
+[ext_resource type="Texture2D" uid="uid://c5ks75m67s2dq" path="res://addons/Stone_Path_007_SD/Stone_Path_007_basecolor.jpg" id="4_yr6ak"]
 [ext_resource type="ArrayMesh" uid="uid://byo14ia0svrv7" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/neutral/wall_straight.obj" id="5_7sevg"]
+[ext_resource type="Texture2D" uid="uid://qtfq2tdhi6vr" path="res://addons/Stone_Path_007_SD/Stone_Path_007_ambientOcclusion.jpg" id="5_hb0kq"]
 [ext_resource type="Script" path="res://path_follow_3d.gd" id="5_iye2q"]
+[ext_resource type="Texture2D" uid="uid://oo1naob0p7vi" path="res://addons/Stone_Path_007_SD/Stone_Path_007_height.png" id="6_ox8nv"]
+[ext_resource type="Texture2D" uid="uid://c2sbw3kos55cc" path="res://addons/Stone_Path_007_SD/Stone_Path_007_normal.jpg" id="7_buq2g"]
+[ext_resource type="Texture2D" uid="uid://cbyidddce8awg" path="res://addons/Stone_Path_007_SD/Stone_Path_007_roughness.jpg" id="8_s045o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t47df"]
+albedo_texture = ExtResource("4_yr6ak")
+roughness_texture = ExtResource("8_s045o")
+normal_enabled = true
+normal_texture = ExtResource("7_buq2g")
+ao_enabled = true
+ao_texture = ExtResource("5_hb0kq")
+heightmap_enabled = true
+heightmap_texture = ExtResource("6_ox8nv")
+uv1_scale = Vector3(20, 20, 20)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_5y0sy"]
 
@@ -77,6 +93,7 @@ mesh = ExtResource("3_to2ew")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0594336, 0.247392, -19.7164)
 use_collision = true
 size = Vector3(50, 0, 50)
+material = SubResource("StandardMaterial3D_t47df")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ky0li")
