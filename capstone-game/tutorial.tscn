@@ -64,6 +64,10 @@ vertical_alignment = 1
 [node name="separator" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
+[node name="separator" type="Control" parent="MarginContainer/VBoxContainer/separator"]
+layout_mode = 3
+anchors_preset = 0
+
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 alignment = 1
@@ -74,6 +78,12 @@ theme_override_constants/separation = 18
 alignment = 1
 
 [node name="separator" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="separator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="separator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="play_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
