@@ -17,23 +17,23 @@
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_qol5c"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jb0kc"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yc3qw"]
 seamless = true
 noise = SubResource("FastNoiseLite_qol5c")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8oxlf"]
 sky_top_color = Color(0.275289, 0.670756, 0.816241, 1)
 sky_horizon_color = Color(0.872347, 0.560894, 0.183365, 1)
-sky_cover = SubResource("NoiseTexture2D_jb0kc")
+sky_cover = SubResource("NoiseTexture2D_yc3qw")
 ground_bottom_color = Color(0.177715, 0.169762, 0.275282, 1)
 ground_horizon_color = Color(0.668805, 0.646014, 0.497373, 1)
 
-[sub_resource type="Sky" id="Sky_6pqf8"]
+[sub_resource type="Sky" id="Sky_8bnv7"]
 sky_material = SubResource("ProceduralSkyMaterial_8oxlf")
 
 [sub_resource type="Environment" id="Environment_hx023"]
 background_mode = 2
-sky = SubResource("Sky_6pqf8")
+sky = SubResource("Sky_8bnv7")
 tonemap_mode = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gpq8w"]

@@ -1,13 +1,44 @@
-[gd_scene load_steps=2 format=3 uid="uid://1pqmuo5e1pe6"]
+[gd_scene load_steps=8 format=3 uid="uid://1pqmuo5e1pe6"]
 
 [ext_resource type="PackedScene" uid="uid://hfu35y2qqm3x" path="res://mainCharacter.tscn" id="1_117or"]
+[ext_resource type="Script" path="res://main_character.gd" id="2_cvn11"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5y0sy"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jb0kc"]
+seamless = true
+noise = SubResource("FastNoiseLite_5y0sy")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_v1ho2"]
+sky_top_color = Color(0.275289, 0.670756, 0.816241, 1)
+sky_horizon_color = Color(0.872347, 0.560894, 0.183365, 1)
+sky_cover = SubResource("NoiseTexture2D_jb0kc")
+ground_bottom_color = Color(0.177715, 0.169762, 0.275282, 1)
+ground_horizon_color = Color(0.668805, 0.646014, 0.497373, 1)
+
+[sub_resource type="Sky" id="Sky_6pqf8"]
+sky_material = SubResource("ProceduralSkyMaterial_v1ho2")
+
+[sub_resource type="Environment" id="Environment_ky0li"]
+background_mode = 2
+sky = SubResource("Sky_6pqf8")
+tonemap_mode = 2
 
 [node name="InsideCastle" type="Node3D"]
+
+[node name="Rogue_Hooded2" parent="." instance=ExtResource("1_117or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.563401, 0)
+script = ExtResource("2_cvn11")
+
+[node name="camera_mount" type="Node3D" parent="Rogue_Hooded2"]
+
+[node name="Camera3D" type="Camera3D" parent="Rogue_Hooded2/camera_mount"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0278841, 2.82291, 4.19872)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0594336, 0.247392, 0.0303723)
 use_collision = true
 size = Vector3(2.4054, 0.635742, 2.52844)
 
-[node name="Rogue_Hooded" parent="." instance=ExtResource("1_117or")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.563401, 0)
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ky0li")
