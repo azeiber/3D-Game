@@ -17,21 +17,21 @@
 [ext_resource type="PackedScene" uid="uid://hfu35y2qqm3x" path="res://mainCharacter.tscn" id="7_cabfx"]
 [ext_resource type="Texture2D" uid="uid://1sua7jfoxlkw" path="res://addons/kaykit_medieval_hexagon_pack/Textures/cartoon-style-wooden-slats/885.jpg" id="8_xaksv"]
 [ext_resource type="Script" path="res://area_3d.gd" id="9_5csha"]
-[ext_resource type="AudioStream" uid="uid://dwa5hj4raiwqe" path="res://addons/sounds/The Merry Bard.wav" id="10_ai5ir"]
 [ext_resource type="Script" path="res://main_character.gd" id="10_koqoj"]
 [ext_resource type="PackedScene" uid="uid://bfbb4iq3kqu6q" path="res://addons/kaykit_medieval_hexagon_pack/Assets/gltf/decoration/nature/cloud_big.gltf" id="15_ho0kl"]
+[ext_resource type="AudioStream" uid="uid://b588mou508hab" path="res://addons/sounds/Clash of Steel.wav" id="19_jwvv0"]
 [ext_resource type="PackedScene" uid="uid://c5p7dee1k60k7" path="res://addons/kaykit_medieval_hexagon_pack/Assets/gltf/decoration/nature/tree_single_A.gltf" id="21_kocua"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tgiq0"]
 panorama = ExtResource("1_vrlwl")
 
-[sub_resource type="Sky" id="Sky_gh3w8"]
+[sub_resource type="Sky" id="Sky_yijjx"]
 sky_material = SubResource("PanoramaSkyMaterial_tgiq0")
 
 [sub_resource type="Environment" id="Environment_dobxd"]
 background_mode = 2
 background_energy_multiplier = 0.83
-sky = SubResource("Sky_gh3w8")
+sky = SubResource("Sky_yijjx")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tn3k5"]
 albedo_texture = ExtResource("1_1fr0e")
@@ -299,7 +299,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14085, 0, -31.0269)
 curve = SubResource("Curve3D_b7bkr")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Level/Path3D"]
-transform = Transform3D(0.0232193, 0.0350786, -0.999095, 0, 0.999209, 0.0350935, 0.999558, -0.000814861, 0.0232085, -7.79243, -0.142599, -1.06192)
+transform = Transform3D(0.0232193, 0.0350786, -0.999094, 0, 0.999209, 0.0350935, 0.999558, -0.000814861, 0.0232085, -7.79243, -0.142599, -1.06192)
 loop = false
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Level/Path3D/PathFollow3D"]
@@ -322,7 +322,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14085, 0, -41.7174)
 curve = SubResource("Curve3D_b7bkr")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Level/Path3D2"]
-transform = Transform3D(0.0232193, 0.0350786, -0.999095, 0, 0.999209, 0.0350935, 0.999558, -0.000814861, 0.0232085, -7.79243, -0.142599, -1.06192)
+transform = Transform3D(0.0232193, 0.0350786, -0.999094, 0, 0.999209, 0.0350935, 0.999558, -0.000814861, 0.0232085, -7.79243, -0.142599, -1.06192)
 loop = false
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Level/Path3D2/PathFollow3D"]
@@ -418,7 +418,7 @@ script = ExtResource("10_koqoj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0278841, 2.82291, 4.19872)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_ai5ir")
+stream = ExtResource("19_jwvv0")
 autoplay = true
 
 [node name="cloud_big3" parent="." instance=ExtResource("15_ho0kl")]
