@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://1pqmuo5e1pe6"]
+[gd_scene load_steps=14 format=3 uid="uid://1pqmuo5e1pe6"]
 
 [ext_resource type="PackedScene" uid="uid://hfu35y2qqm3x" path="res://mainCharacter.tscn" id="1_117or"]
 [ext_resource type="Script" path="res://main_character.gd" id="2_cvn11"]
 [ext_resource type="ArrayMesh" uid="uid://bvpgxwpc3x4fx" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/neutral/wall_corner_A_gate_door_left.obj" id="3_to2ew"]
 [ext_resource type="ArrayMesh" uid="uid://b4fnx1ohhbpyg" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/props/barrel.obj" id="4_pklxd"]
 [ext_resource type="ArrayMesh" uid="uid://byo14ia0svrv7" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/neutral/wall_straight.obj" id="5_7sevg"]
+[ext_resource type="Script" path="res://path_follow_3d.gd" id="5_iye2q"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_5y0sy"]
 
@@ -30,11 +31,16 @@ tonemap_mode = 2
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q3gak"]
 
 [sub_resource type="Curve3D" id="Curve3D_ralri"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
 
 [node name="InsideCastle" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.921335, 0.38877, 0, -0.38877, 0.921335, -3.91021, 27.6066, -17.0196)
+transform = Transform3D(1, 0, 0, 0, 0.921335, 0.38877, 0, -0.38877, 0.921335, -3.21342, 87.8467, -15.0315)
 
 [node name="Rogue_Hooded2" parent="." instance=ExtResource("1_117or")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.377689, -5.17779)
@@ -121,8 +127,13 @@ shape = SubResource("CapsuleShape3D_q3gak")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9012, 3.1222, -15.8067)
 curve = SubResource("Curve3D_ralri")
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6924, 3.1463, -15.561)
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 2.60987, 0)
+progress = 2.60986
+script = ExtResource("5_iye2q")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Path3D/PathFollow3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1.91069e-15, -0.2457, 0.208799, -0.0241001)
 radius = 1.58654
 height = 1.13808
 
