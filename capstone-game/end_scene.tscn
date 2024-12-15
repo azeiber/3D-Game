@@ -37,28 +37,28 @@ texture = ExtResource("1_eneny")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 376.0
-offset_top = 116.0
-offset_right = 804.0
-offset_bottom = 197.0
+offset_left = 364.0
+offset_top = 122.0
+offset_right = 808.0
+offset_bottom = 203.0
 text = "YOU WIN!!"
 label_settings = SubResource("LabelSettings_uuxns")
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 192.0
-offset_top = 268.0
-offset_right = 1009.0
-offset_bottom = 363.0
+offset_left = 82.0
+offset_top = 248.0
+offset_right = 1086.0
+offset_bottom = 343.0
 text = "You have successfully managed to escape!"
 label_settings = SubResource("LabelSettings_5um7a")
 
 [node name="play_again_button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 522.0
-offset_top = 384.0
-offset_right = 702.0
-offset_bottom = 456.0
+offset_left = 500.0
+offset_top = 352.0
+offset_right = 680.0
+offset_bottom = 424.0
 theme_override_fonts/font = ExtResource("4_8dv82")
 theme_override_font_sizes/font_size = 26
 text = "Play Again"
