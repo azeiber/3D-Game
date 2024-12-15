@@ -1,0 +1,34 @@
+[gd_scene load_steps=8 format=3 uid="uid://cqyst1j17ten6"]
+
+[ext_resource type="Texture2D" uid="uid://c73v3sdqaqj2h" path="res://addons/golden_egg/textures/lambert1_baseColor.jpeg" id="1_8vp7t"]
+[ext_resource type="Script" path="res://goldegg.gd" id="2_70jti"]
+[ext_resource type="Texture2D" uid="uid://cb46aeejivira" path="res://addons/golden_egg/textures/lambert1_metallicRoughness.png" id="2_vr40i"]
+[ext_resource type="Texture2D" uid="uid://d1m3yj6ur3ncj" path="res://addons/golden_egg/textures/lambert1_normal.png" id="3_nfbf7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sn1tj"]
+radius = 86.0
+height = 246.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1gdsc"]
+albedo_texture = ExtResource("1_8vp7t")
+metallic = 1.0
+metallic_texture = ExtResource("2_vr40i")
+normal_enabled = true
+normal_texture = ExtResource("3_nfbf7")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ihomx"]
+material = SubResource("StandardMaterial3D_1gdsc")
+radius = 36.638
+height = 140.602
+
+[node name="Area3D" type="Area3D"]
+script = ExtResource("2_70jti")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_sn1tj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_ihomx")
+skeleton = NodePath("../CollisionShape3D")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
