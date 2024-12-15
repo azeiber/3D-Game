@@ -788,31 +788,31 @@ mesh = SubResource("PlaneMesh_sch6f")
 material = SubResource("StandardMaterial3D_6ecgm")
 
 [node name="CSGMesh3D64" type="CSGMesh3D" parent="."]
-transform = Transform3D(0.692889, 0, 2.81421, 0, 1, 0, -1.87614, 0, 1.03933, -12.7717, 61.1628, -4.45571)
+transform = Transform3D(0.692889, 0, 2.81421, 0, 1, 0, -1.87614, 0, 1.03933, -12.7717, 61.23, -4.45571)
 use_collision = true
 mesh = SubResource("PlaneMesh_sch6f")
 material = SubResource("StandardMaterial3D_6ecgm")
 
 [node name="CSGMesh3D65" type="CSGMesh3D" parent="."]
-transform = Transform3D(0.506638, 0, 2.90215, 0, 1, 0, -1.93477, 0, 0.759957, -10.9916, 62.4195, -3.54927)
+transform = Transform3D(0.506638, 0, 2.90215, 0, 1, 0, -1.93477, 0, 0.759957, -10.9916, 62.2636, -3.54927)
 use_collision = true
 mesh = SubResource("PlaneMesh_sch6f")
 material = SubResource("StandardMaterial3D_6ecgm")
 
 [node name="CSGMesh3D66" type="CSGMesh3D" parent="."]
-transform = Transform3D(0.379973, 0, 2.94536, 0, 1, 0, -1.96357, 0, 0.56996, -9.13451, 63.6056, -2.921)
+transform = Transform3D(0.379973, 0, 2.94536, 0, 1, 0, -1.96357, 0, 0.56996, -9.13451, 63.2411, -2.921)
 use_collision = true
 mesh = SubResource("PlaneMesh_sch6f")
 material = SubResource("StandardMaterial3D_6ecgm")
 
 [node name="CSGMesh3D67" type="CSGMesh3D" parent="."]
-transform = Transform3D(0.174799, 0, 2.98852, 0, 1, 0, -1.99235, 0, 0.262198, -5.67962, 64.4081, -2.09802)
+transform = Transform3D(0.174799, 0, 2.98852, 0, 1, 0, -1.99235, 0, 0.262198, -5.67962, 64.199, -2.09802)
 use_collision = true
 mesh = SubResource("PlaneMesh_sch6f")
 material = SubResource("StandardMaterial3D_6ecgm")
 
 [node name="CSGMesh3D68" type="CSGMesh3D" parent="."]
-transform = Transform3D(0.0455843, 0, 2.99922, 0, 1, 0, -1.99948, 0, 0.0683764, -1.95558, 65.108, -1.86233)
+transform = Transform3D(0.0455843, 0, 2.99922, 0, 1, 0, -1.99948, 0, 0.0683764, -1.95558, 65.3052, -1.86233)
 use_collision = true
 mesh = SubResource("PlaneMesh_sch6f")
 material = SubResource("StandardMaterial3D_6ecgm")
