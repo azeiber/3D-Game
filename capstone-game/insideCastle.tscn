@@ -77,6 +77,21 @@ _data = {
 }
 point_count = 4
 
+[sub_resource type="Animation" id="Animation_5f312"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_w8bkj"]
 resource_name = "vertical_moving_platform"
 length = 12.0
@@ -92,21 +107,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.3313, 0.6566, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_5f312"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PathFollow3D:progress_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b0x1q"]
@@ -297,10 +297,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.938, 8.90908, -27.2029)
 curve = SubResource("Curve3D_7n5me")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Moving platforms/Path3D"]
-transform = Transform3D(-4.04119e-05, 0.999994, -0.00330853, 0.0143322, -0.0033076, -0.999891, -0.999896, -8.78274e-05, -0.014332, 0.0715629, 4.17844, 0.205674)
+transform = Transform3D(1.19209e-07, 0.999781, -0.020902, 0.0167766, -0.020899, -0.99964, -0.999858, -0.000350505, -0.016773, 0.0108433, -0.022645, 0.138948)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Moving platforms/Path3D/PathFollow3D"]
-transform = Transform3D(0.960552, -0.0496011, 0.273643, 0.275718, 0.0412982, -0.960352, 0.0363335, 0.997915, 0.0533449, 0, 0, 0)
+transform = Transform3D(0.960552, -0.049601, 0.273643, 0.275718, 0.0412982, -0.960352, 0.0363334, 0.997915, 0.053345, 0, 0, 0)
 use_collision = true
 radius = 1.53097
 height = 0.521878
@@ -310,3 +310,33 @@ libraries = {
 "": SubResource("AnimationLibrary_b0x1q")
 }
 autoplay = "vertical_moving_platform"
+
+[node name="CSGMesh3D5" type="CSGMesh3D" parent="."]
+transform = Transform3D(2, 0, -1.55028e-14, 0, 1, 0, 1.03352e-14, 0, 3, -10.9642, 18.4515, -26.9565)
+use_collision = true
+mesh = SubResource("PlaneMesh_sch6f")
+material = SubResource("StandardMaterial3D_6ecgm")
+
+[node name="CSGMesh3D6" type="CSGMesh3D" parent="."]
+transform = Transform3D(2, 0, -1.55028e-14, 0, 1, 0, 1.03352e-14, 0, 3, -10.9642, 18.4515, -21.0281)
+use_collision = true
+mesh = SubResource("PlaneMesh_sch6f")
+material = SubResource("StandardMaterial3D_6ecgm")
+
+[node name="CSGMesh3D7" type="CSGMesh3D" parent="."]
+transform = Transform3D(2, 0, -1.55028e-14, 0, 1, 0, 1.03352e-14, 0, 3, -10.9642, 18.4515, -32.8717)
+use_collision = true
+mesh = SubResource("PlaneMesh_sch6f")
+material = SubResource("StandardMaterial3D_6ecgm")
+
+[node name="CSGMesh3D8" type="CSGMesh3D" parent="."]
+transform = Transform3D(-0.0028623, 0, -3, 0, 1, 0, 2, 0, -0.00429345, -5.97706, 18.4515, -33.8388)
+use_collision = true
+mesh = SubResource("PlaneMesh_sch6f")
+material = SubResource("StandardMaterial3D_6ecgm")
+
+[node name="CSGMesh3D9" type="CSGMesh3D" parent="."]
+transform = Transform3D(-0.0028623, 0, -3, 0, 1, 0, 2, 0, -0.00429345, -9.95971, 18.4515, -16.0282)
+use_collision = true
+mesh = SubResource("PlaneMesh_sch6f")
+material = SubResource("StandardMaterial3D_6ecgm")
