@@ -44,10 +44,9 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_r6rjg")
 theme_override_font_sizes/font_size = 18
-text = "In a land far away, a young merchant was wrongly accused of stealing the princess' prized 
-possesion: her puppy named Rosie. he knows he is innocent, but the guards are after him
-and the only way to escape is through the castle... make your way to the castle and help
-the young merchant exape to freedom!
+text = "You are a circus acrobat and your prized possesion - a golden 
+capsule -  was stolen from you by a local baron. Use your acrobat skills
+to break into the castle, get your capsule back and escape!
 
 Controls:
 WASD: Move
@@ -55,9 +54,8 @@ Space: Jump
 Esc: Make mouse visible
 click: hide mouse
 Mouse: Look around
-Stay in the Shadows: Avoid detection
 
-Your journey begins now—escape the castle and reclaim your freedom!"
+Your journey begins now—escape the castle and retrieve your belongings!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
