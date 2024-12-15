@@ -1,0 +1,11 @@
+Model Information:
+* title:	Golden Egg
+* source:	https://sketchfab.com/3d-models/golden-egg-7e448ef50fbf4d529042a113d0509417
+* author:	Danny_Taylor (https://sketchfab.com/DINOWAAA)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Golden Egg" (https://sketchfab.com/3d-models/golden-egg-7e448ef50fbf4d529042a113d0509417) by Danny_Taylor (https://sketchfab.com/DINOWAAA) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
