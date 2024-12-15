@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://1pqmuo5e1pe6"]
+[gd_scene load_steps=31 format=3 uid="uid://1pqmuo5e1pe6"]
 
 [ext_resource type="PackedScene" uid="uid://hfu35y2qqm3x" path="res://mainCharacter.tscn" id="1_117or"]
 [ext_resource type="Script" path="res://main_character.gd" id="2_cvn11"]
@@ -69,6 +69,51 @@ background_energy_multiplier = 0.83
 sky = SubResource("Sky_gh3w8")
 
 [sub_resource type="Curve3D" id="Curve3D_56iwh"]
+
+[sub_resource type="Curve3D" id="Curve3D_7n5me"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.0108433, -0.022645, 0.138948, 0, 0, 0, 0, 0, 0, 0.0664625, 2.63731, 0.18358, 0, 0, 0, 0, 0, 0, 0.07798, 6.1174, 0.233471, 0, 0, 0, 0, 0, 0, -0.0528641, 9.41242, 0.341776),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="Animation" id="Animation_w8bkj"]
+resource_name = "vertical_moving_platform"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4.03333, 6.03333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.3313, 0.6566, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_5f312"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b0x1q"]
+_data = {
+"RESET": SubResource("Animation_5f312"),
+"vertical_moving_platform": SubResource("Animation_w8bkj")
+}
 
 [node name="InsideCastle" type="Node3D"]
 
@@ -244,3 +289,24 @@ transform = Transform3D(2, 0, -1.55028e-14, -1.93839e-15, 0.982255, -0.562658, 1
 use_collision = true
 mesh = SubResource("PlaneMesh_sch6f")
 material = SubResource("StandardMaterial3D_6ecgm")
+
+[node name="Moving platforms" type="Node" parent="."]
+
+[node name="Path3D" type="Path3D" parent="Moving platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.938, 8.90908, -27.2029)
+curve = SubResource("Curve3D_7n5me")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Moving platforms/Path3D"]
+transform = Transform3D(-4.04119e-05, 0.999994, -0.00330853, 0.0143322, -0.0033076, -0.999891, -0.999896, -8.78274e-05, -0.014332, 0.0715629, 4.17844, 0.205674)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Moving platforms/Path3D/PathFollow3D"]
+transform = Transform3D(0.960552, -0.0496011, 0.273643, 0.275718, 0.0412982, -0.960352, 0.0363335, 0.997915, 0.0533449, 0, 0, 0)
+use_collision = true
+radius = 1.53097
+height = 0.521878
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Moving platforms/Path3D"]
+libraries = {
+"": SubResource("AnimationLibrary_b0x1q")
+}
+autoplay = "vertical_moving_platform"
